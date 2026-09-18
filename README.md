@@ -110,6 +110,8 @@ official/licensed sources
 
 See [`ARCHITECTURE.md`](ARCHITECTURE.md) and
 [`docs/provenance.md`](docs/provenance.md) for the release and trust model.
+The Cloud Run and GCS boundary is specified in
+[`docs/cloud-run-contract.md`](docs/cloud-run-contract.md).
 
 ## Repository status
 
