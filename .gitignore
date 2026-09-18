@@ -1,0 +1,17 @@
+node_modules
+dist
+.wrangler
+.dev.vars
+.env
+# Generated release snapshots are published to GCS/Cloudflare, not committed.
+public/data
+public/uc
+public/data/cache
+public/data/raw
+data/*.sqlite
+data/*.sqlite-*
+data/cache
+.release-transfer
+*.log
+.DS_Store
+*.tsbuildinfo

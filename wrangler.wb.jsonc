@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ri-wb-data-corner",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-07-27",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [{ "pattern": "wb.proto.fund", "custom_domain": true }],
+  "vars": {
+    "API_ORIGIN": "https://osnova-data-api-234928894513.europe-west1.run.app",
+    "CORNER": "wb"
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true
+  },
+  "observability": { "enabled": true }
+}

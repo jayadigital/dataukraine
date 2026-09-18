@@ -1,0 +1,38 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "osnova-ukrainian-dataroom",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-07-27",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "ukraine.proto.fund", "custom_domain": true },
+    { "pattern": "dataukraine.proto.fund", "custom_domain": true },
+    { "pattern": "ukraine.osnova.ai", "custom_domain": true },
+    { "pattern": "nbu.proto.fund", "custom_domain": true },
+    { "pattern": "stat.proto.fund", "custom_domain": true },
+    { "pattern": "budget.proto.fund", "custom_domain": true },
+    { "pattern": "oecd.proto.fund", "custom_domain": true },
+    { "pattern": "wb.proto.fund", "custom_domain": true },
+    { "pattern": "ilostat.proto.fund", "custom_domain": true },
+    { "pattern": "imf.proto.fund", "custom_domain": true },
+    { "pattern": "eurostat.proto.fund", "custom_domain": true },
+    { "pattern": "comtrade.proto.fund", "custom_domain": true },
+    { "pattern": "tradingeconomics.proto.fund", "custom_domain": true },
+    { "pattern": "industrial.proto.fund", "custom_domain": true },
+    { "pattern": "worldsteel.proto.fund", "custom_domain": true },
+    { "pattern": "owid.proto.fund", "custom_domain": true },
+    { "pattern": "uconomics.proto.fund", "custom_domain": true }
+  ],
+  "vars": {
+    "API_ORIGIN": "https://osnova-data-api-234928894513.europe-west1.run.app",
+    "CORNER": "ukraine"
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true
+  },
+  "observability": { "enabled": true }
+}

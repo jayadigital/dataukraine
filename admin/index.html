@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>RI / Country Data Local Lab</title>
+    <link rel="stylesheet" href="/admin/admin.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="brand" href="/admin/" aria-label="Local Data Lab home">
+        <span class="brand-mark">RI</span>
+        <span>COUNTRY DATA<br />LOCAL LAB</span>
+      </a>
+      <nav aria-label="Local dashboard navigation">
+        <a href="#explorer">Data Explorer</a>
+        <a href="#sql-lab">SQL Lab</a>
+      </nav>
+      <div class="connection">
+        <span class="connection-dot" aria-hidden="true"></span>
+        <span>SQLite / read-only</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Osnova o.3 / local analytical workspace</p>
+          <h1>Play with the<br /><em>whole economy.</em></h1>
+          <p class="hero-deck">
+            Explore normalized time series, inspect source rows and dimensions,
+            and ask your own questions in SQL. Nothing here is exposed publicly.
+          </p>
+        </div>
+        <aside class="local-note">
+          <span>Local only</span>
+          <strong>127.0.0.1</strong>
+          <p>
+            The database remains on this computer. Cloudflare receives only the
+            validated flat-file publication layer.
+          </p>
+        </aside>
+      </section>
+
+      <section class="stats" aria-label="Database overview">
+        <article>
+          <span>Datasets</span>
+          <strong id="stat-datasets">...</strong>
+          <small>live rooms</small>
+        </article>
+        <article>
+          <span>Data rooms</span>
+          <strong id="stat-snapshots">...</strong>
+          <small>published datasets</small>
+        </article>
+        <article>
+          <span>Raw rows</span>
+          <strong id="stat-rows">...</strong>
+          <small>inside SQLite</small>
+        </article>
+        <article>
+          <span>SQLite</span>
+          <strong id="stat-size">...</strong>
+          <small>compressed locally</small>
+        </article>
+      </section>
+
+      <section class="explorer-section" id="explorer">
+        <header class="section-heading">
+          <span>01</span>
+          <div>
+            <p class="eyebrow">Browse / chart / inspect</p>
+            <h2>Data Explorer</h2>
+          </div>
+          <p>
+            Choose a dataset, switch its normalized series, filter dates, and
+            open the current source row sample.
+          </p>
+        </header>
+
+        <div class="explorer-layout">
+          <aside class="catalogue">
+            <label for="dataset-search">Find a dataset</label>
+            <input
+              id="dataset-search"
+              type="search"
+              placeholder="GDP, wages, region, industry..."
+              autocomplete="off"
+            />
+            <div class="catalogue-list" id="dataset-list" aria-live="polite"></div>
+          </aside>
+
+          <article class="workbench" id="dataset-workbench">
+            <div class="workbench-loading">Loading the local database...</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sql-section" id="sql-lab">
+        <header class="section-heading section-heading-dark">
+          <span>02</span>
+          <div>
+            <p class="eyebrow">Ask the database directly</p>
+            <h2>SQL Lab</h2>
+          </div>
+          <p>
+            Read-only queries are capped at 1,000 displayed rows. Press
+            <kbd>Cmd</kbd> + <kbd>Enter</kbd> to run.
+          </p>
+        </header>
+
+        <div class="sql-shell">
+          <div class="sql-examples" aria-label="Sample SQL queries">
+            <button type="button" data-sql-example="catalogue">Catalogue</button>
+            <button type="button" data-sql-example="series">Series coverage</button>
+            <button type="button" data-sql-example="snapshots">Regional ready</button>
+            <button type="button" data-sql-example="freshness">Freshness</button>
+          </div>
+          <label class="sr-only" for="sql-input">SQL query</label>
+          <textarea id="sql-input" spellcheck="false"></textarea>
+          <div class="sql-actions">
+            <button class="primary-button" id="run-query" type="button">
+              Run query
+            </button>
+            <button class="text-button" id="export-query" type="button" disabled>
+              Export result CSV
+            </button>
+            <span id="query-status">Ready</span>
+          </div>
+          <div class="table-shell sql-results" id="query-results">
+            <p class="empty-state">Run a sample or write a SELECT query.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span class="brand-mark">RI</span>
+      <p>
+        Local analytical surface for RI data corners. Read-only by design.
+      </p>
+      <a
+        href="/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Open local dashboard
+      </a>
+    </footer>
+
+    <script type="module" src="/admin/admin.js"></script>
+  </body>
+</html>
