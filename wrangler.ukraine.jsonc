@@ -21,8 +21,7 @@
     { "pattern": "tradingeconomics.proto.fund", "custom_domain": true },
     { "pattern": "industrial.proto.fund", "custom_domain": true },
     { "pattern": "worldsteel.proto.fund", "custom_domain": true },
-    { "pattern": "owid.proto.fund", "custom_domain": true },
-    { "pattern": "uconomics.proto.fund", "custom_domain": true }
+    { "pattern": "owid.proto.fund", "custom_domain": true }
   ],
   "vars": {
     "API_ORIGIN": "https://osnova-data-api-234928894513.europe-west1.run.app",
