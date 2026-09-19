@@ -403,7 +403,7 @@ export function DataChart({
   function share() {
     const shareUrl = new URL(
       sharePath ?? `${window.location.pathname}${window.location.search}`,
-      "https://ukraine.proto.fund",
+      "https://dataukraine.proto.fund",
     );
     shareUrl.searchParams.delete("chart");
     shareUrl.hash = stableGraphCode.toLocaleLowerCase();

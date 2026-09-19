@@ -93,12 +93,12 @@ export const cornerMeta = {
   },
   uconomics: {
     source: "Uconomics 0.1",
-    sourceUrl: "https://ukraine.proto.fund/corner/uconomics",
+    sourceUrl: "https://dataukraine.proto.fund/corner/uconomics",
     storageModel: "Flat normalized Markdown, JSON and CSV article-graph release",
   },
   ukraine: {
     source: "Ukraine Dataroom",
-    sourceUrl: "https://ukraine.proto.fund",
+    sourceUrl: "https://dataukraine.proto.fund",
     storageModel: "13 source SQLite warehouses + semantic registry + bounded universal files",
   },
 };

@@ -231,7 +231,7 @@ const cornerConfigs: Record<
     hero: "Промисловість України",
     heroEmphasis: "",
     deck: "Металургія, енергетика, хімія, машинобудування, будівництво, агро, інфраструктура та сценарні ряди.",
-    sourceUrl: "https://ukraine.proto.fund/corner/industrial",
+    sourceUrl: "https://dataukraine.proto.fund/corner/industrial",
   },
   worldsteel: {
     mark: "WORLDSTEEL",
@@ -258,7 +258,7 @@ const cornerConfigs: Record<
     hero: "Uconomics 0.1",
     heroEmphasis: "",
     deck: "Вісім груп статей про промисловість, послуги, державу, макроекономіку, фінанси, людей, відбудову та інституції.",
-    sourceUrl: "https://ukraine.proto.fund/corner/uconomics",
+    sourceUrl: "https://dataukraine.proto.fund/corner/uconomics",
   },
   frames: {
     mark: "FRAMES",
@@ -267,7 +267,7 @@ const cornerConfigs: Record<
     hero: "Кадри форсайту",
     heroEmphasis: "",
     deck: "Спільна база, шість траєкторій F1 і правила читання сценарної моделі.",
-    sourceUrl: "https://ukraine.proto.fund/corner/frames",
+    sourceUrl: "https://dataukraine.proto.fund/corner/frames",
   },
   scenarios: {
     mark: "SCEN",
@@ -276,7 +276,7 @@ const cornerConfigs: Record<
     hero: "Сценарії Uconomics",
     heroEmphasis: "",
     deck: "П’ять канонічних сценаріїв, межі 2040 року та параметри користувацької траєкторії.",
-    sourceUrl: "https://ukraine.proto.fund/corner/scenarios",
+    sourceUrl: "https://dataukraine.proto.fund/corner/scenarios",
   },
   ukraine: {
     mark: "UKRAINE",
@@ -285,7 +285,7 @@ const cornerConfigs: Record<
     hero: "Економіка України",
     heroEmphasis: "",
     deck: "Макроекономіка, державні фінанси, банки, торгівля, праця, бюджет і промисловість.",
-    sourceUrl: "https://ukraine.proto.fund",
+    sourceUrl: "https://dataukraine.proto.fund",
   },
 };
 
@@ -923,7 +923,7 @@ function DataroomSearch({
       <button className="portal-overlay-dismiss" type="button" onClick={onClose} aria-label={ua ? "Закрити пошук" : "Close search"} />
       <div className="search-overlay-panel">
         <div className="search-overlay-header">
-          <a href="https://ukraine.proto.fund" className="brand" aria-label={ua ? "Економіка України" : "Ukraine economy"}>
+          <a href="https://dataukraine.proto.fund" className="brand" aria-label={ua ? "Економіка України" : "Ukraine economy"}>
             <img className="brand-logo" src={dataUkraineLogoUrl} alt="" />
           </a>
           <input
@@ -1033,7 +1033,7 @@ function Masthead({ generatedAt }: { generatedAt?: string }) {
       <header className="masthead" data-generated-at={generatedAt}>
         <a
           className="brand"
-          href="https://ukraine.proto.fund"
+          href="https://dataukraine.proto.fund"
           aria-label={ua ? "Економіка України" : "Ukraine economy"}
         >
           <img className="brand-logo" src={dataUkraineLogoUrl} alt="" />
@@ -4356,7 +4356,7 @@ function ApiDocsPage() {
     ["GET", "/api/v1/ukraine/forecasts", ua ? "Опубліковані прогнози та прогалини" : "Published forecasts and coverage gaps"],
     ["GET", "/api/v1/ukraine/reports/latest", ua ? "Останній автоматичний звіт" : "Latest automated update report"],
   ];
-  const example = `curl "https://ukraine.proto.fund/api/v1/ukraine/corners/imf/datasets/ngdp_rpch/series?start_year=2020&end_year=2031"`;
+  const example = `curl "https://dataukraine.proto.fund/api/v1/ukraine/corners/imf/datasets/ngdp_rpch/series?start_year=2020&end_year=2031"`;
 
   return (
     <div className="app-shell api-docs-page">
@@ -4430,7 +4430,7 @@ function SiteFooter() {
       : source.sourceShort;
   return (
     <footer className="site-footer">
-      <a className="brand footer-brand" href="https://ukraine.proto.fund" aria-label={ua ? "Економіка України" : "Ukraine economy"}>
+      <a className="brand footer-brand" href="https://dataukraine.proto.fund" aria-label={ua ? "Економіка України" : "Ukraine economy"}>
         <img className="brand-logo" src={dataUkraineLogoUrl} alt="" />
       </a>
       <p>
@@ -4609,8 +4609,8 @@ function WidgetExamplesPage() {
   }, []);
 
   const shortId = sample?.shortId ?? "wb-0029";
-  const iframeSrc = `https://ukraine.proto.fund/embed/${shortId}?lang=${locale}`;
-  const pageSrc = `https://ukraine.proto.fund/id/${shortId}?lang=${locale}`;
+  const iframeSrc = `https://dataukraine.proto.fund/embed/${shortId}?lang=${locale}`;
+  const pageSrc = `https://dataukraine.proto.fund/id/${shortId}?lang=${locale}`;
 
   return (
     <div className="app-shell widget-page">
@@ -4620,8 +4620,8 @@ function WidgetExamplesPage() {
           <h1>{ua ? "Інтеграція графіків" : "Graph integration"}</h1>
           <p>
             {ua
-              ? "Стандартний публічний ідентифікатор графіка: `ukraine.proto.fund/id/{corner-code}-{dataset-number}`. Для вбудовування використовуйте `/embed/`."
-              : "Public standard graph identifier: `ukraine.proto.fund/id/{corner-code}-{dataset-number}`. Use `/embed/` for integration."}
+              ? "Стандартний публічний ідентифікатор графіка: `dataukraine.proto.fund/id/{corner-code}-{dataset-number}`. Для вбудовування використовуйте `/embed/`."
+              : "Public standard graph identifier: `dataukraine.proto.fund/id/{corner-code}-{dataset-number}`. Use `/embed/` for integration."}
           </p>
         </section>
 
@@ -4650,7 +4650,7 @@ function UconomicsCornerPage() {
       <Masthead />
       <main>
         <section className="api-hero widget-hero">
-          <a className="back-link" href="https://ukraine.proto.fund">← {ua ? "Ukraine Dataroom" : "Ukraine Dataroom"}</a>
+          <a className="back-link" href="https://dataukraine.proto.fund">← {ua ? "Ukraine Dataroom" : "Ukraine Dataroom"}</a>
           <h1>Uconomics</h1>
           <p>
             {ua

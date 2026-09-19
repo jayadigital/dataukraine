@@ -5,13 +5,13 @@ source-backed data room about Ukraine. It turns official and licensed source
 data into inspectable releases, stable graph contracts, read-only API
 responses, and a responsive catalogue for researchers and stakeholders.
 
-Live interface: <https://ukraine.proto.fund>
+Live interface: <https://dataukraine.proto.fund>
 
-Public API: <https://ukraine.proto.fund/api/v1/ukraine>
+Public API: <https://dataukraine.proto.fund/api/v1/ukraine>
 
-OpenAPI: <https://ukraine.proto.fund/api/v1/ukraine/openapi.json>
+OpenAPI: <https://dataukraine.proto.fund/api/v1/ukraine/openapi.json>
 
-Widget examples: <https://ukraine.proto.fund/developers/widgets>
+Widget examples: <https://dataukraine.proto.fund/developers/widgets>
 
 ## What this repository exposes
 
@@ -76,7 +76,7 @@ The other corner commands and the local schema are documented in
 ## API example
 
 ```bash
-curl 'https://ukraine.proto.fund/api/v1/ukraine/corners/imf/datasets/ngdp_rpch/series?start_year=2020&end_year=2031'
+curl 'https://dataukraine.proto.fund/api/v1/ukraine/corners/imf/datasets/ngdp_rpch/series?start_year=2020&end_year=2031'
 ```
 
 The response is bounded, carries source and status metadata, and is suitable

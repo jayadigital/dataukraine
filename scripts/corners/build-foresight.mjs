@@ -69,7 +69,7 @@ const canonicalSources = {
   riEnergy: {
     id: "uc-s-0264-u1-01",
     label: "DataUkraine / RI — historical electricity production carrier",
-    url: "https://ukraine.proto.fund/corner/industrial/dataset/ri08-a1-g01",
+    url: "https://dataukraine.proto.fund/corner/industrial/dataset/ri08-a1-g01",
   },
   riIndustry: {
     id: "uc-s-0254-u1-04",
@@ -546,8 +546,8 @@ await writeCorner("scenarios", 16, "Сценарії Uconomics", "Uconomics scen
 for (const path of [resolve(staticRoot, "universal.json"), resolve(localUniversalRoot, "universal.json")]) {
   const universal = JSON.parse(await readFile(path, "utf8"));
   const additions = [
-    { id: "frames", number: 15, name: "FRAMES", title: "Кадри форсайту", titleEn: "Foresight frames", url: "https://ukraine.proto.fund/corner/frames", manifestUrl: "https://ukraine.proto.fund/uc/frames/dataroom/manifest.json", role: "Спільна база та Gate 1", roleEn: "Shared baseline and Gate 1", description: "Спостережувана база і шість траєкторій F1.", descriptionEn: "Observed baseline and six F1 trajectories.", datasetCount: framesEntries.length, deferredCount: 0, observationCount: framesEntries.reduce((sum, entry) => sum + entry.summary.rowCount, 0), coverageStart: "2021-12-31", latestDate: "2040-12-31", categories: [...new Set(framesEntries.map((entry) => entry.card.category))], status: "live" },
-    { id: "scenarios", number: 16, name: "SCENARIOS", title: "Сценарії Uconomics", titleEn: "Uconomics scenarios", url: "https://ukraine.proto.fund/corner/scenarios", manifestUrl: "https://ukraine.proto.fund/uc/scenarios/dataroom/manifest.json", role: "Gate 2 та сценарний контракт", roleEn: "Gate 2 and the scenario contract", description: "П’ять канонічних сценаріїв, межі 2040 року та Expert controls.", descriptionEn: "Five canonical scenarios, 2040 boundaries and Expert controls.", datasetCount: scenarioEntries.length, deferredCount: 0, observationCount: scenarioEntries.reduce((sum, entry) => sum + entry.summary.rowCount, 0), coverageStart: "2025-12-31", latestDate: "2040-12-31", categories: [...new Set(scenarioEntries.map((entry) => entry.card.category))], status: "live" },
+    { id: "frames", number: 15, name: "FRAMES", title: "Кадри форсайту", titleEn: "Foresight frames", url: "https://dataukraine.proto.fund/corner/frames", manifestUrl: "https://dataukraine.proto.fund/uc/frames/dataroom/manifest.json", role: "Спільна база та Gate 1", roleEn: "Shared baseline and Gate 1", description: "Спостережувана база і шість траєкторій F1.", descriptionEn: "Observed baseline and six F1 trajectories.", datasetCount: framesEntries.length, deferredCount: 0, observationCount: framesEntries.reduce((sum, entry) => sum + entry.summary.rowCount, 0), coverageStart: "2021-12-31", latestDate: "2040-12-31", categories: [...new Set(framesEntries.map((entry) => entry.card.category))], status: "live" },
+    { id: "scenarios", number: 16, name: "SCENARIOS", title: "Сценарії Uconomics", titleEn: "Uconomics scenarios", url: "https://dataukraine.proto.fund/corner/scenarios", manifestUrl: "https://dataukraine.proto.fund/uc/scenarios/dataroom/manifest.json", role: "Gate 2 та сценарний контракт", roleEn: "Gate 2 and the scenario contract", description: "П’ять канонічних сценаріїв, межі 2040 року та Expert controls.", descriptionEn: "Five canonical scenarios, 2040 boundaries and Expert controls.", datasetCount: scenarioEntries.length, deferredCount: 0, observationCount: scenarioEntries.reduce((sum, entry) => sum + entry.summary.rowCount, 0), coverageStart: "2025-12-31", latestDate: "2040-12-31", categories: [...new Set(scenarioEntries.map((entry) => entry.card.category))], status: "live" },
   ];
   universal.corners = [...universal.corners.filter((corner) => !["frames", "scenarios"].includes(corner.id)), ...additions];
   universal.meta.generatedAt = generatedAt;
@@ -562,7 +562,7 @@ for (const path of [resolve(staticRoot, "id-index.json"), resolve(localUniversal
   for (const [corner, entries] of [["frames", framesEntries], ["scenarios", scenarioEntries]]) {
     for (const entry of entries) {
       const shortId = entry.card.graphCodeBase.replace(/^UA-/u, "").toLocaleLowerCase();
-      index.byShortId[shortId] = { shortId, graphCodeBase: entry.card.graphCodeBase, corner, datasetId: entry.card.id, number: entry.card.number, title: entry.card.title, titleUa: entry.card.titleUa, titleEn: entry.card.titleEn, url: `https://ukraine.proto.fund/id/${shortId}` };
+      index.byShortId[shortId] = { shortId, graphCodeBase: entry.card.graphCodeBase, corner, datasetId: entry.card.id, number: entry.card.number, title: entry.card.title, titleUa: entry.card.titleUa, titleEn: entry.card.titleEn, url: `https://dataukraine.proto.fund/id/${shortId}` };
     }
   }
   index.generatedAt = generatedAt;

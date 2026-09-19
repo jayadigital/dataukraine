@@ -4,7 +4,7 @@ The public API is read-only and does not require a key. It is served by the
 universal Ukraine domain and returns JSON unless an explicit export format is
 requested.
 
-Base URL: `https://ukraine.proto.fund/api/v1/ukraine`
+Base URL: `https://dataukraine.proto.fund/api/v1/ukraine`
 
 ## Discovery
 
@@ -37,7 +37,7 @@ available. A client should not assume that every dataset is annual: retain
 the returned frequency, period, unit, and status fields.
 
 ```bash
-curl 'https://ukraine.proto.fund/api/v1/ukraine/corners/imf/datasets/ngdp_rpch/series?start_year=2020&end_year=2031'
+curl 'https://dataukraine.proto.fund/api/v1/ukraine/corners/imf/datasets/ngdp_rpch/series?start_year=2020&end_year=2031'
 ```
 
 ## Universal and foresight endpoints

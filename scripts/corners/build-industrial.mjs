@@ -329,8 +329,8 @@ function lineageFor(block, originalTitle) {
           .map((item) => item.sourceId),
         reason: "Первинне або порівняльне значення RI посилається на зовнішнє джерело цього куточка.",
         url: datasetId
-          ? `https://ukraine.proto.fund/corner/${source.corner}/dataset/${datasetId}`
-          : `https://ukraine.proto.fund/corner/${source.corner}`,
+          ? `https://dataukraine.proto.fund/corner/${source.corner}/dataset/${datasetId}`
+          : `https://dataukraine.proto.fund/corner/${source.corner}`,
       };
     });
   return {
@@ -697,8 +697,8 @@ for (const block of blocks) {
       : allDatasets.length < 40
         ? "top"
         : "deep",
-    officialUrl: "https://ukraine.proto.fund/corner/industrial",
-    sourceUrl: "https://ukraine.proto.fund/corner/industrial",
+    officialUrl: "https://dataukraine.proto.fund/corner/industrial",
+    sourceUrl: "https://dataukraine.proto.fund/corner/industrial",
     fetchMode: `RI alpha bucket ${block.source.bucket}: ${block.source.role}`,
     description: block.description ||
       `${title}. Таблиця з RI alpha bucket ${block.source.bucket}; джерельні маркери збережено у первинних рядках.`,
@@ -868,8 +868,8 @@ await writeFile(manifestPath, `${JSON.stringify(manifest)}\n`);
 const connectionRegistry = {
   generatedAt,
   contract: "Ukraine Proto Fund Dataroom RI connection registry v1",
-  canonicalCorner: "https://ukraine.proto.fund/corner/industrial",
-  apiBase: "https://ukraine.proto.fund/api/v1/ukraine",
+  canonicalCorner: "https://dataukraine.proto.fund/corner/industrial",
+  apiBase: "https://dataukraine.proto.fund/api/v1/ukraine",
   datasets: datasets.map((dataset) => ({
     riOriginalId: dataset.lineage.originalId,
     riOriginalTitle: dataset.lineage.originalTitle,
@@ -877,9 +877,9 @@ const connectionRegistry = {
     mode: dataset.lineage.mode,
     dataRoomDatasetId: dataset.id,
     graphCodeBase: `UA-RI-${String(dataset.number).padStart(4, "0")}`,
-    page: `https://ukraine.proto.fund/corner/industrial/dataset/${dataset.id}`,
-    datasetApi: `https://ukraine.proto.fund/api/v1/ukraine/corners/industrial/datasets/${dataset.id}`,
-    seriesApi: `https://ukraine.proto.fund/api/v1/ukraine/corners/industrial/datasets/${dataset.id}/series`,
+    page: `https://dataukraine.proto.fund/corner/industrial/dataset/${dataset.id}`,
+    datasetApi: `https://dataukraine.proto.fund/api/v1/ukraine/corners/industrial/datasets/${dataset.id}`,
+    seriesApi: `https://dataukraine.proto.fund/api/v1/ukraine/corners/industrial/datasets/${dataset.id}/series`,
     connections: dataset.lineage.connections,
   })),
 };

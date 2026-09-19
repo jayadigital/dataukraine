@@ -1,4 +1,4 @@
-const api = "https://ukraine.proto.fund/api/v1/ukraine";
+const api = "https://dataukraine.proto.fund/api/v1/ukraine";
 
 async function getJson(path) {
   const response = await fetch(`${api}${path}`, {

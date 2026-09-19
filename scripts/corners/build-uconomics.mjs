@@ -1167,7 +1167,7 @@ function parseDatasetBlock(block, sourceMap, number) {
   }
   const validRows = rows.filter((row) => row.date && Number.isFinite(row.value));
   const firstSource = refs.find((ref) => ref.url && !/pending manual recovery/iu.test(ref.url));
-  const sourceUrl = firstSource?.url ?? "https://ukraine.proto.fund/corner/uconomics";
+  const sourceUrl = firstSource?.url ?? "https://dataukraine.proto.fund/corner/uconomics";
   const suiteInfo = suiteMeta[suite] ?? {
     category: "Uconomics",
     title: "Uconomics",
@@ -1246,7 +1246,7 @@ function coverageFor(dataset, latestDate) {
     limitation: ref.url ? null : "The source ID is retained, but no URL was supplied in the canonical source file.",
     latestDate,
     latestRows: dataset.rows.filter((row) => row.date === latestDate).length,
-    latestUrl: ref.url ?? "https://ukraine.proto.fund/corner/uconomics",
+    latestUrl: ref.url ?? "https://dataukraine.proto.fund/corner/uconomics",
     cadence: dataset.frequency,
     chartedPoints: dataset.rows.length,
     cache: { snapshots: 1, rows: dataset.rows.length, bytes: Buffer.byteLength(dataset.rawArticle) },
@@ -1327,7 +1327,7 @@ async function mergeRootIndexes(uconomicsManifest, datasets, factOnlyDatasets) {
       title: dataset.title,
       titleUa: dataset.titleUa,
       titleEn: dataset.titleEn,
-      url: `https://ukraine.proto.fund/id/${dataset.id.toLowerCase()}`,
+      url: `https://dataukraine.proto.fund/id/${dataset.id.toLowerCase()}`,
     };
   }
   rootIndex.generatedAt = generatedAt;
@@ -1346,7 +1346,7 @@ async function mergeRootIndexes(uconomicsManifest, datasets, factOnlyDatasets) {
     titleEn: "Uconomics 0.1",
     nameUa: "Uconomics",
     nameEn: "Uconomics",
-    url: "https://ukraine.proto.fund/corner/uconomics",
+    url: "https://dataukraine.proto.fund/corner/uconomics",
     role: "Аналітичний корпус U1–U8, пов’язаний із канонічними джерелами",
     roleEn: "U1–U8 analytical corpus linked to canonical sources",
     description: "Нормалізовані графіки для восьми груп статей Uconomics 0.1.",
@@ -1357,7 +1357,7 @@ async function mergeRootIndexes(uconomicsManifest, datasets, factOnlyDatasets) {
     factOnlyCount: factOnlyDatasets.length,
     latestDate: datasets.flatMap((dataset) => dataset.rows.map((row) => row.date)).sort().at(-1) ?? null,
     coverageStart: datasets.flatMap((dataset) => dataset.rows.map((row) => row.date)).sort()[0] ?? null,
-    sourceUrl: "https://ukraine.proto.fund/corner/uconomics",
+    sourceUrl: "https://dataukraine.proto.fund/corner/uconomics",
     categories: [...new Set(datasets.map((dataset) => dataset.category))].sort(),
     status: "live",
   };
@@ -1398,7 +1398,7 @@ async function buildCanonicalGraphRegistry(uconomicsManifest, rootIndex, univers
         number: dataset.number,
         titleUa: dataset.titleUa ?? dataset.title,
         titleEn: dataset.titleEn ?? dataset.title,
-        publicUrl: `https://ukraine.proto.fund/id/${base.replace(/^UA-/iu, "").toLowerCase()}`,
+        publicUrl: `https://dataukraine.proto.fund/id/${base.replace(/^UA-/iu, "").toLowerCase()}`,
         sourceUrl,
         sourceId: base.replace(/^UA-/iu, "").toLowerCase(),
         sourceRefs,
@@ -1419,8 +1419,8 @@ async function buildCanonicalGraphRegistry(uconomicsManifest, rootIndex, univers
       number: dataset.number,
       titleUa: dataset.titleUa,
       titleEn: dataset.titleEn,
-      publicUrl: `https://ukraine.proto.fund/id/${base}`,
-      sourceUrl: sourceRefs.find((ref) => ref.url)?.url ?? "https://ukraine.proto.fund/corner/uconomics",
+      publicUrl: `https://dataukraine.proto.fund/id/${base}`,
+      sourceUrl: sourceRefs.find((ref) => ref.url)?.url ?? "https://dataukraine.proto.fund/corner/uconomics",
       sourceId: base,
       sourceRefs,
       flatFiles: {
@@ -1439,8 +1439,8 @@ async function buildCanonicalGraphRegistry(uconomicsManifest, rootIndex, univers
     graphCount: corners.length,
     cornerCount: universal.corners.length,
     conventions: {
-      canonicalId: "ukraine.proto.fund/id/{publisher-code}-{dataset-number}",
-      uconomicsId: "ukraine.proto.fund/id/uc-u{suite}-{article}-d1",
+      canonicalId: "dataukraine.proto.fund/id/{publisher-code}-{dataset-number}",
+      uconomicsId: "dataukraine.proto.fund/id/uc-u{suite}-{article}-d1",
       directFlatFiles: "Uconomics static release files are available below /uc/uconomics/; other corners remain served by their API-backed public contract.",
     },
     corners,
